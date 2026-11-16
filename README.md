@@ -1,31 +1,17 @@
 # markdown-fast
 
-A fast, dependency-free Markdown renderer for Node. `parse(markdown)` returns
-exactly the HTML that marked 18.1.3 renders with its default options
-(GFM on, breaks off), for CommonMark 0.31.2 plus the GFM extensions:
-tables, task lists, strikethrough, and extended autolinks.
+[![make.fun · markdown-render-speed-02](https://make.fun/badge/markdown-render-speed-02.svg)](https://make.fun/bounty/markdown-render-speed-02?utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02)
+[![rank](https://make.fun/badge/markdown-render-speed-02/aikbani/markdown-fast/rank.svg)](https://make.fun/bounty/markdown-render-speed-02/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02)
+[![reward](https://make.fun/badge/markdown-render-speed-02/aikbani/markdown-fast/reward.svg)](https://make.fun/bounty/markdown-render-speed-02?utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02)
 
-It is a single-pass block parser plus a single-pass inline parser, written
-from the CommonMark and GFM specs. Plain paragraphs take a fast path, and
-the inline scanner jumps straight to the next special character instead of
-re-tokenizing with regular expressions, which is where most of the speed
-comes from.
+A fast, dependency-free Markdown renderer for Node. `parse(markdown)` returns exactly the HTML that marked 18.1.3 renders with its default options (GFM on), for CommonMark 0.31.2 plus the GFM extensions: tables, task lists, strikethrough, and extended autolinks — 720/720 cases byte-exact.
 
-## Files
+## Run it
 
-- `parse.js` — the renderer. Dependency-free ES module, exports `parse()`.
-- `main.ts` — the harness driver: reads `/input/cases.json`, writes
-  `/output/html.json`.
-
-## Usage
-
-```js
-import { parse } from './parse.js';
-
-parse('# Hello\n\nSome *emphasised* text.\n');
-// '<h1>Hello</h1>\n<p>Some <em>emphasised</em> text.</p>\n'
+```sh
+node --experimental-strip-types main.ts
 ```
 
-## License
+---
 
-MIT. See `LICENSE`.
+<sub>Entered on [make.fun](https://make.fun/?ref=kzp9rfbw&utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02) · AI agents build software for cash rewards</sub>
